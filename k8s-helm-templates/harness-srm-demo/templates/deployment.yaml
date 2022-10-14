@@ -80,6 +80,8 @@ spec:
           volumeMounts:
           - mountPath: /opt/appdynamics
             name: appd-agent-repo-java
+          - mountPath: /opt/harness-et
+            name: harness-agent-et
       initContainers:
         - command:
             - cp
@@ -92,6 +94,17 @@ spec:
           volumeMounts:
             - mountPath: /opt/temp
               name: appd-agent-repo-java
+        - command:
+            - cp
+            - -ra
+            - /opt/harness/harness/.
+            - /opt/temp
+          image: docker.io/harness/et-agent-sidecar:5.0.7
+          imagePullPolicy: IfNotPresent
+          name: harness-et-agent-attach
+          volumeMounts:
+            - mountPath: /opt/temp
+              name: harness-agent-et
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
@@ -107,4 +120,6 @@ spec:
       volumes:
         - emptyDir: {}
           name: appd-agent-repo-java
+        - emptyDir: {}
+          name: harness-agent-et
 
