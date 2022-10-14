@@ -59,6 +59,11 @@ spec:
               protocol: TCP
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          env:
+            - name: MY_POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
           {{- if or .Values.env.config .Values.env.secrets }}
           envFrom:
           {{- if .Values.env.config }}
