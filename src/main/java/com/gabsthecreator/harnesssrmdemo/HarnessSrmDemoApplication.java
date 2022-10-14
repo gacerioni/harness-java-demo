@@ -21,8 +21,8 @@ public class HarnessSrmDemoApplication {
 		RestTemplate restTemplate = new RestTemplate();
 		String result = restTemplate.getForObject(uri, String.class);
 
-		System.out.println(result);
-		//System.out.println("Fixed delay task - " + System.currentTimeMillis() / 1000);
+		//System.out.println(result);
+		System.out.println("Calling the API...");
 	}
 
 }
