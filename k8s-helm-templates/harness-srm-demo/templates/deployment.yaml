@@ -64,6 +64,8 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: metadata.name
+            - name: APPDYNAMICS_AGENT_NODE_NAME
+              value: $(POD_NAME)
           {{- if or .Values.env.config .Values.env.secrets }}
           envFrom:
           {{- if .Values.env.config }}
