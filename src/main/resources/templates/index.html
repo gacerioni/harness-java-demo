@@ -1,53 +1,57 @@
 <!DOCTYPE html>
 <!-- saved from url=(0033)http://iis-prd.harness-demo.site/ -->
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" xmlns:th="http://www.thymeleaf.org">
-    
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" xmlns:th="http://www.thymeleaf.org">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page - HarnessDemoWeb</title>
-    <link rel="stylesheet" href="./support_files/bootstrap.min.css">
-    <link rel="stylesheet" href="./support_files/site.css">
-    <link rel="stylesheet" href="./support_files/HarnessDemoWeb.styles.css">
+    <link rel="stylesheet" th:href="@{/styles/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/styles/site.css}">
+    <link rel="stylesheet" th:href="@{/styles/HarnessDemoWeb.styles.css}">
 </head>
 <body data-new-gr-c-s-check-loaded="14.1083.0" data-gr-ext-installed="">
-    <header>
-        <nav b-4lauca5nue="" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div b-4lauca5nue="" class="container-fluid">
-                <a class="navbar-brand" href="http://iis-prd.harness-demo.site/">Harness Demo - SecondGen - SRM</a>
-                <button b-4lauca5nue="" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span b-4lauca5nue="" class="navbar-toggler-icon"></span>
-                </button>
-                <div b-4lauca5nue="" class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul b-4lauca5nue="" class="navbar-nav flex-grow-1">
-                        <li b-4lauca5nue="" class="nav-item">
-                            <a class="nav-link text-dark" href="http://iis-prd.harness-demo.site/">Home</a>
-                        </li>
-                        <li b-4lauca5nue="" class="nav-item">
-                            <a class="nav-link text-dark" href="http://iis-prd.harness-demo.site/Home/Privacy">Privacy</a>
-                        </li>
-                        <li b-4lauca5nue="" class="nav-item">
-                            <a b-4lauca5nue="" class="nav-link text-dark" target="_blank" href="https://harness.io/">
-                                <img alt="Harness.io" src="./support_files/harness.jpg" width="50" height="25">
-                            </a>
-                        </li>
-                        <li b-4lauca5nue="" class="nav-item">
-                            <a b-4lauca5nue="" class="nav-link text-dark" target="_blank" href="https://github.com/gacerioni">
-                                <img alt="GitHub" src="./support_files/github_icon.png" width="25" height="25">
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+<header>
+    <nav b-4lauca5nue=""
+         class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div b-4lauca5nue="" class="container-fluid">
+            <a class="navbar-brand" href="http://iis-prd.harness-demo.site/">Harness Demo - SecondGen - SRM</a>
+            <button b-4lauca5nue="" class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span b-4lauca5nue="" class="navbar-toggler-icon"></span>
+            </button>
+            <div b-4lauca5nue="" class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul b-4lauca5nue="" class="navbar-nav flex-grow-1">
+                    <li b-4lauca5nue="" class="nav-item">
+                        <a class="nav-link text-dark" href="http://iis-prd.harness-demo.site/">Home</a>
+                    </li>
+                    <li b-4lauca5nue="" class="nav-item">
+                        <a class="nav-link text-dark" href="http://iis-prd.harness-demo.site/Home/Privacy">Privacy</a>
+                    </li>
+                    <li b-4lauca5nue="" class="nav-item">
+                        <a b-4lauca5nue="" class="nav-link text-dark" target="_blank" href="https://harness.io/">
+                            <img alt="Harness.io" src="/styles/harness.jpg" width="50" height="25">
+                        </a>
+                    </li>
+                    <li b-4lauca5nue="" class="nav-item">
+                        <a b-4lauca5nue="" class="nav-link text-dark" target="_blank"
+                           href="https://github.com/gacerioni">
+                            <img alt="GitHub" src="/styles/github_icon.png" width="25" height="25">
+                        </a>
+                    </li>
+                </ul>
             </div>
-        </nav>
-    </header>
-    <div b-4lauca5nue="" class="container">
-        <main b-4lauca5nue="" role="main" class="pb-3">
-            
+        </div>
+    </nav>
+</header>
+<div b-4lauca5nue="" class="container">
+    <main b-4lauca5nue="" role="main" class="pb-3">
 
 
-
-    <script src="./support_files/sdk.client-iife.js.download"></script>
-    <script src="./support_files/jquery-1.9.1.js.download"></script>
-    <script>
+        <script src="/styles/sdk.client-iife.js.download"></script>
+        <script src="/styles/jquery-1.9.1.js.download"></script>
+        <script>
 
 
         function logout() {
@@ -85,8 +89,9 @@
             }
         }
 
-    </script>
-    <script>
+
+        </script>
+        <script>
         $(function () {
             console.log('Harness FF is loading...');
 
@@ -125,72 +130,89 @@
                 show_hide_column("ccm", cf.variation('Enable_CCM_Module', true));
             })
         });
-    </script>
+
+        </script>
 
 
-
-<div class="login-info">
-    <div>
-        Welcome, <strong class="email">gacerioni@gmail.com</strong>!
-        <div class="dropdown" style="display: inline">
-            <a href="http://iis-prd.harness-demo.site/#" class="logout" type="button" onclick="logout(); return false;">Log Out</a>
+        <div class="login-info">
+            <div>
+                Welcome, <strong class="email">gacerioni@gmail.com</strong>!
+                <div class="dropdown" style="display: inline">
+                    <a href="http://iis-prd.harness-demo.site/#" class="logout" type="button"
+                       onclick="logout(); return false;">Log Out</a>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
-<br>
-<br>
+        <br>
+        <br>
 
 
-<div class="text-center">
-    <h1 class="display-4">Demo Version: v1.0.0</h1>
-    <p>Harness has successfully deployed your application!</p>
-</div>
-
-<div class="text-center">
-    <h3>App Metadata</h3>
-    <p th:text="${buildProperties.getName()}" />
-</div>
-
-<table cellpadding="0" cellspacing="0" width="100%">
-    <tbody>
-        <tr>
-            <td id="ci" style="display: block;">
-                <br><a target="_blank" href="https://harness.io/products/continuous-integration"><img src="./support_files/CI.png"></a><br>Intelligent build &amp; test
-            </td>
-            <td id="cd" style="display: block;">
-                <br><a target="_blank" href="https://harness.io/products/continuous-delivery"><img src="./support_files/CG_GitOps.png"></a><br>Fast &amp; Secure deployments
-            </td>
-            <td id="ccm" style="display: block;">
-                <br><a target="_blank" href="https://harness.io/products/cloud-cost"><img src="./support_files/CCM.png"></a><br>Cloud Cost Management
-            </td>
-            <td id="ff" style="display: block;">
-                <br><a target="_blank" href="https://harness.io/products/feature-flags"><img src="./support_files/FF.png"></a><br>Manage feature flags
-            </td>
-            <td id="srm" style="display: block;">
-                <br><a target="_blank" href="https://harness.io/products/service-reliability-management"><img src="./support_files/SRM.png"></a><br>SLO-driven software delivery
-            </td>
-            <td id="sto" style="display: block;">
-                <br><a target="_blank" href="https://harness.io/products/security-testing-orchestration"><img src="./support_files/STO.png"></a><br>Shift-left application security
-            </td>
-            <td id="ce" style="display: block;">
-                <br><a target="_blank" href="https://harness.io/products/chaos-engineering"><img src="./support_files/chaos.png"></a><br>Improve application resiliency
-            </td>
-        </tr>
-    </tbody>
-</table>
-        </main>
-    </div>
-
-    <footer b-4lauca5nue="" class="border-top footer text-muted">
-        <div b-4lauca5nue="" class="container">
-            © 2022 - Harness Demo Web - <a href="http://iis-prd.harness-demo.site/Home/Privacy">Gabs the Creator</a>
+        <div class="text-center">
+            <h1 class="display-4">Demo Version: v1.0.0</h1>
+            <p>Harness has successfully deployed your application!</p>
         </div>
-    </footer>
-    <script src="./support_files/jquery.min.js.download"></script>
-    <script src="./support_files/bootstrap.bundle.min.js.download"></script>
-    <script src="./support_files/site.js.download"></script>
-    
+
+        <div cellpadding="0" cellspacing="0" width="100%" class="text-center">
+            <h2>Version Status</h2>
+            <p style="color:green;">Good! Not affecting Golden Signals!</p>
+            <br>
+            <br>
+            <h2>App Metadata</h2>
+            <h4>App Name</h4> <p th:text="${buildProperties.getName()}"/>
+            <h4>App Version</h4> <p th:text="${buildProperties.getVersion()}"/>
+            <h4>API Endpoint</h4> /api/v1/harness-modules
+            <br>
+            <h4>Health Endpoint</h4> /actuator/health
+            <br>
+            <h4>Metrics Endpoint (Prometheus)</h4> /actuator/prometheus
+        </div>
+
+        <table cellpadding="0" cellspacing="0" width="100%">
+            <tbody>
+            <tr>
+                <td id="ci" style="display: block;">
+                    <br><a target="_blank" href="https://harness.io/products/continuous-integration"><img
+                        src="/styles/CI.png"></a><br>Intelligent build &amp; test
+                </td>
+                <td id="cd" style="display: block;">
+                    <br><a target="_blank" href="https://harness.io/products/continuous-delivery"><img
+                        src="/styles/CG_GitOps.png"></a><br>Fast &amp; Secure deployments
+                </td>
+                <td id="ccm" style="display: block;">
+                    <br><a target="_blank" href="https://harness.io/products/cloud-cost"><img src="/styles/CCM.png"></a><br>Cloud
+                    Cost Management
+                </td>
+                <td id="ff" style="display: block;">
+                    <br><a target="_blank" href="https://harness.io/products/feature-flags"><img
+                        src="/styles/FF.png"></a><br>Manage feature flags
+                </td>
+                <td id="srm" style="display: block;">
+                    <br><a target="_blank" href="https://harness.io/products/service-reliability-management"><img
+                        src="/styles/SRM.png"></a><br>SLO-driven software delivery
+                </td>
+                <td id="sto" style="display: block;">
+                    <br><a target="_blank" href="https://harness.io/products/security-testing-orchestration"><img
+                        src="/styles/STO.png"></a><br>Shift-left application security
+                </td>
+                <td id="ce" style="display: block;">
+                    <br><a target="_blank" href="https://harness.io/products/chaos-engineering"><img
+                        src="/styles/chaos.png"></a><br>Improve application resiliency
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </main>
+</div>
+
+<footer b-4lauca5nue="" class="border-top footer text-muted">
+    <div b-4lauca5nue="" class="container">
+        © 2022 - Harness Demo Web - <a href="http://iis-prd.harness-demo.site/Home/Privacy">Gabs the Creator</a>
+    </div>
+</footer>
+<script src="/styles/jquery.min.js.download"></script>
+<script src="/styles/bootstrap.bundle.min.js.download"></script>
+<script src="/styles/site.js.download"></script>
 
 
 </body>
