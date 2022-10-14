@@ -1,0 +1,103 @@
+{{- if .Values.env.config}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "fullstack-springboot-react.fullname" . }}
+data:
+{{ .Values.env.config | toYaml | indent 2 }}
+---
+{{- end}}
+
+{{- if .Values.env.secrets}}
+apiVersion: v1
+kind: Secret
+metadata:
+  name: {{ include "fullstack-springboot-react.fullname" . }}
+stringData:
+{{ .Values.env.secrets | toYaml | indent 2 }}
+---
+{{- end}}
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "fullstack-springboot-react.fullname" . }}
+  labels:
+    {{- include "fullstack-springboot-react.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "fullstack-springboot-react.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "fullstack-springboot-react.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "fullstack-springboot-react.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.full_image_name }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          {{- if or .Values.env.config .Values.env.secrets }}
+          envFrom:
+          {{- if .Values.env.config }}
+          - configMapRef:
+              name: {{ include "fullstack-springboot-react.fullname" . }}
+          {{- end }}
+          {{- if .Values.env.secrets }}
+          - secretRef:
+              name: {{ include "fullstack-springboot-react.fullname" . }}
+          {{- end }}
+          {{- end }}
+          volumeMounts:
+          - mountPath: /opt/appdynamics
+            name: appd-agent-repo-java
+      initContainers:
+        - command:
+            - cp
+            - -ra
+            - /opt/appdynamics/.
+            - /opt/temp
+          image: docker.io/appdynamics/java-agent:22.7.0
+          imagePullPolicy: IfNotPresent
+          name: appd-agent-attach
+          volumeMounts:
+            - mountPath: /opt/temp
+              name: appd-agent-repo-java
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      volumes:
+        - emptyDir: {}
+          name: appd-agent-repo-java
+
