@@ -122,4 +122,3 @@ spec:
           name: appd-agent-repo-java
         - emptyDir: {}
           name: harness-agent-et
-
