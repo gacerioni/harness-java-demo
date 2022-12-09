@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.gabsthecreator</groupId>
 	<artifactId>harness-srm-demo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>harness-srm-demo</name>
 	<description>A demo for Harness NG SRM</description>
 	<properties>
@@ -64,6 +64,12 @@
 		<dependency>
 			<groupId>io.micrometer</groupId>
 			<artifactId>micrometer-registry-prometheus</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-help-plugin</artifactId>
+			<version>3.3.0</version>
+			<type>maven-plugin</type>
 		</dependency>
 	</dependencies>
 
