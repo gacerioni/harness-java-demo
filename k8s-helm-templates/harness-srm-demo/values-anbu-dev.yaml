@@ -6,5 +6,3 @@ podAnnotations:
 env:
   config:
     JAVA_TOOL_OPTIONS: '-agentpath:/opt/harness-et/lib/libETAgent.so -XX:-UseTypeSpeculation -Xshare:off'
-
-
