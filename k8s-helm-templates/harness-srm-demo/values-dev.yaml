@@ -49,7 +49,7 @@ env:
     #APPDYNAMICS_CONTROLLER_HOST_NAME: "econocombrasil.saas.appdynamics.com"
     #APPDYNAMICS_CONTROLLER_PORT: "443"
     #APPDYNAMICS_CONTROLLER_SSL_ENABLED: "true"
-    #APPDYNAMICS_AGENT_ACCOUNT_ACCESS_KEY: <+secrets.getValue("econoappdsecret")>
+    #APPDYNAMICS_AGENT_ACCOUNT_ACCESS_KEY: "aaa"
     ET_COLLECTOR_URL: "https://app.harness.io/gratis/et-collector/"
     ET_PROJECT_ID: "Harness_Modules_SRM"
     ET_ACCOUNT_ID: "Io9SR1H7TtGBq9LVyJVB2w"
