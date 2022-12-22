@@ -1,3 +1,5 @@
+nameOverride: <+service.name>
+
 podAnnotations:
   prometheus.io/scrape: 'true'
   prometheus.io/path: '/actuator/prometheus'
