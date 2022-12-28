@@ -82,6 +82,10 @@ spec:
             name: appd-agent-repo-java
           - mountPath: /opt/harness-et
             name: harness-agent-et
+          readinessProbe:
+            httpGet:
+              path: /api/v1/harness-modules
+              port: http
       initContainers:
         - command:
             - cp
