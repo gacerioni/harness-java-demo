@@ -86,6 +86,16 @@ spec:
             httpGet:
               path: /api/v1/harness-modules
               port: http
+          livenessProbe:
+            httpGet:
+              path: /actuator/health
+              port: http
+          startupProbe:
+            httpGet:
+              path: /api/v1/harness-modules
+              port: http
+            failureThreshold: 15
+            periodSeconds: 5
       initContainers:
         - command:
             - cp
