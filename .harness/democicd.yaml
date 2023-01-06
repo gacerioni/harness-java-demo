@@ -1,0 +1,30 @@
+pipeline:
+  name: demo-ci-cd
+  identifier: democicd
+  projectIdentifier: Gabs_Labs
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: Oie
+        identifier: Oie
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: ShellScript
+                  name: test
+                  identifier: test
+                  spec:
+                    shell: Bash
+                    onDelegate: true
+                    source:
+                      type: Inline
+                      spec:
+                        script: test
+                    environmentVariables: []
+                    outputVariables: []
+                  timeout: 10m
+        tags: {}
