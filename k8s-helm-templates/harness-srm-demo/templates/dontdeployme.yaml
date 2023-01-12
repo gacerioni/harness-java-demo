@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: nginx-manually
+  name: manual-{{ include "fullstack-springboot-react.fullname" . }}
 spec:
   containers:
   - name: nginx
