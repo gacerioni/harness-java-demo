@@ -23,8 +23,7 @@ ingress:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: batatas.io.br
+    - host: gabs.harness-demo.site
       paths:
         - path: /anbu(/|$)(.*)
           pathType: Prefix
-
