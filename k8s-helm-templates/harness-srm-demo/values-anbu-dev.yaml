@@ -18,12 +18,13 @@ ingress:
   enabled: true
   className: "nginx"
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: "*"
+    - host: batatas.io.br
       paths:
-        - path: /anbu
-          pathType: Exact
+        - path: /anbu(/|$)(.*)
+          pathType: Prefix
 
