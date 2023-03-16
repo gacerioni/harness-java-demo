@@ -10,10 +10,19 @@ env:
     JAVA_TOOL_OPTIONS: '-agentpath:/opt/harness-et/lib/libETAgent.so -XX:-UseTypeSpeculation -Xshare:off'
 
 
-ingress:
-  enabled: false
-
-
 service:
   type: ClusterIP
   port: 8080
+
+ingress:
+  enabled: true
+  className: "nginx"
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - paths:
+        - path: /anbu
+          pathType: Exact
+
