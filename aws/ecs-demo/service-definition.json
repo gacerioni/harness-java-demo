@@ -1,0 +1,22 @@
+{  
+    "launchType": "FARGATE",  
+    "serviceName": "anbu-ecs-demo",  
+    "desiredCount": 1,  
+    "networkConfiguration": {  
+        "awsvpcConfiguration": {  
+            "securityGroups": [  
+                "sg-c3e5c3a5"  
+            ],  
+            "subnets": [  
+                "subnet-b0c6c8e8",
+                "subnet-27babe40",
+                "subnet-29e00d60"
+            ],  
+            "assignPublicIp": "ENABLED"  
+        }  
+    },  
+    "deploymentConfiguration": {  
+        "maximumPercent": 100,  
+        "minimumHealthyPercent": 0  
+    }  
+}
