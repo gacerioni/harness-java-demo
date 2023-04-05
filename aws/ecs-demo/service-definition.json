@@ -1,7 +1,7 @@
 {  
     "launchType": "FARGATE",  
     "serviceName": "anbu-ecs-demo",  
-    "desiredCount": 1,
+    "desiredCount": 2,
     "loadBalancers": [
       {
         "targetGroupArn": "arn:aws:elasticloadbalancing:sa-east-1:759984737373:targetgroup/gabs-ecs-demo-tg/16932cb0d504c0b6",
