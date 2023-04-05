@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.gabsthecreator</groupId>
 	<artifactId>harness-srm-demo</artifactId>
-	<version>4.0.2</version>
+	<version>4.0.5</version>
 	<name>harness-srm-demo</name>
 	<description>A demo for Harness NG SRM</description>
 	<properties>
