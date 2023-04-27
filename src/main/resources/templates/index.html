@@ -90,14 +90,21 @@
         }
 
 
+
         </script>
-        <script>
+        <script th:inline="javascript">
         $(function () {
             console.log('Harness FF is loading...');
 
 
             var email = login();
-            var ClientSDK = "318e9736-b97e-43c5-8933-e390498a09ac";
+
+        /*<![CDATA[*/
+
+           var ClientSDK = /*[[${@environment.getProperty('harness.ff.env.SDK.key')}]]*/;
+           console.log(ClientSDK);
+
+        /*]]>*/
 
             var initialize = HarnessFFSDK.initialize;
             var Event = HarnessFFSDK.Event;
@@ -131,6 +138,7 @@
             })
         });
 
+
         </script>
 
 
@@ -149,19 +157,22 @@
 
 
         <div class="text-center">
-            <h1 class="display-4">Demo Version: v4.1.0</h1>
+            <h1 class="display-4">Demo Version: v<span th:text="${buildProperties.getVersion()}"/></h1>
+
             <p>Harness has successfully deployed your application!</p>
         </div>
 
         <div cellpadding="0" cellspacing="0" width="100%" class="text-center">
             <h2>Version Status</h2>
             <p style="color:green;">Good! Not affecting Golden Signals!</p>
-            <p >'/api/v1/harness-modules' is being called every 1 second in order to generate traffic.</p>
+            <p>'/api/v1/harness-modules' is being called every 1 second in order to generate traffic.</p>
             <br>
             <br>
             <h2>App Metadata</h2>
-            <h4>App Name</h4> <p th:text="${buildProperties.getName()}"/>
-            <h4>App Version</h4> <p th:text="${buildProperties.getVersion()}"/>
+            <h4>App Name</h4>
+            <p th:text="${buildProperties.getName()}"/>
+            <h4>App Version</h4>
+            <p th:text="${buildProperties.getVersion()}"/>
             <h4>API Endpoint</h4> /api/v1/harness-modules
             <br>
             <h4>Health Endpoint</h4> /actuator/health
