@@ -8,6 +8,11 @@ class HarnessModuleModelTest {
 
     @Test
     void testEquals() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
     }
 
     @Test
@@ -24,6 +29,11 @@ class HarnessModuleModelTest {
 
     @Test
     void getShortName() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
     }
 
     @Test

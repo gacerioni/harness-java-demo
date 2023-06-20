@@ -7,7 +7,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class HarnessModuleControllerTest {
 
     @Test
-    void saveHarnessModule() {
+    void saveHarnessModule() throws InterruptedException {
+        Thread.sleep(5000);
     }
 
     @Test

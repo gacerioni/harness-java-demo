@@ -12,5 +12,10 @@ class HarnessSrmDemoApplicationTest {
 
     @Test
     void scheduleFixedDelayTask() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
     }
 }

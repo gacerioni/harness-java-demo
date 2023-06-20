@@ -8,5 +8,10 @@ class IndexControllerTest {
 
     @Test
     void index() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
     }
 }

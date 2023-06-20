@@ -8,6 +8,11 @@ class HarnessModuleRepositoryTest {
 
     @Test
     void existsByShortName() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
     }
 
     @Test

@@ -8,6 +8,11 @@ class HarnessModuleServiceTest {
 
     @Test
     void save() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
     }
 
     @Test
