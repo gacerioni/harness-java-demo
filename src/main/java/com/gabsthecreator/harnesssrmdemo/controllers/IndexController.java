@@ -14,7 +14,7 @@ public class IndexController {
 
     @RequestMapping("/")
     public String index(Model model){
-        
+        System.out.println("Forcing Harness Test Intelligence");
         model.addAttribute("buildProperties", buildProperties);
         return "index";
     }
