@@ -22,7 +22,7 @@ public class HarnessSrmDemoApplication {
 		String result = restTemplate.getForObject(uri, String.class);
 
 		//System.out.println(result);
-		System.out.println("Self-Calling the API...");
+		System.out.println("Calling the API...");
 	}
 
 }
