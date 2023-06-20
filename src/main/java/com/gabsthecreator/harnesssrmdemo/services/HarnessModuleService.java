@@ -15,7 +15,6 @@ public class HarnessModuleService {
     final HarnessModuleRepository harnessModuleRepository;
 
     public HarnessModuleService(HarnessModuleRepository harnessModuleRepository){
-        System.out.println("Forcing Harness Test Intelligence");
         this.harnessModuleRepository = harnessModuleRepository;
     }
 
